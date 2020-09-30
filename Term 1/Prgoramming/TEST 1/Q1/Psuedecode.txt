@@ -1,0 +1,16 @@
+rectangleOneLength = INPUT from user: "What is the length of the first rectangle one?: "
+rectangleOneWidth = INPUT from user: "What is the width of the first rectangle one?: "
+
+rectangleTwoLength = INPUT from user: "What is the length of the second rectangle one?: "
+rectangleTwoWidth = INPUT from user: "What is the witdh of the second rectangle one?: "
+
+rectangleOneArea = rectangleOneLength * rectangleOneWidth
+rectangleTwoArea = rectangleTwoLength * rectangleTwoWidth
+
+print("The area of rectangle one is:", rectangleOneArea)
+print("The area of rectangle two is:", rectangleTwoArea)
+
+if rectangleOneArea > rectangleTwoArea:
+  print("rectangle one is bigger than rectangle two")
+else:
+  print("rectangle two is bigger than rectangle one")
