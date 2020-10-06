@@ -1,6 +1,6 @@
 a = [2, 8, 5, 3, 9, 4, 1]
-print(f"\n{a}\n\nv\n")
 #a = ['Anya', 'Max', 'Erik', 'William', 'David', 'Shirley', 'Cheryl', 'Ben', 'Rosie', 'Henry', 'Georgina']
+print(f"\n{a}\n\nv\n")
 swapped = True
 
 while swapped == True:
