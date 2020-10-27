@@ -1,29 +1,32 @@
-# marks = ['Amy', 'Jones', 'English', 67, 'Maths', 76, 'Computer Science', 96]
-marks = {
-  "name": 'Amy Jones',
-  "english": 67,
-  "maths": 76,
-  "computer science": 96
-}
+marks = ['Amy', 'Jones', 'English', 67, 'Maths', 76, 'Computer Science', 96]
 
-index = 0
-for i, j in marks:
-  if i == "english":
-    j = 76
+for i, j in enumerate(marks):
+  # i: index
+  # j: item
+  
+  # update english mark
+  if isinstance(j, str):
+    if j.lower() == 'english':
+      marks[i+1] = 72
 
-marks.pop("maths")
+  # remove maths
+  if isinstance(j, str):
+    if j.lower() == 'maths':
+      del marks[i]
+      del marks[i]
 
-# calculate avg
+# add physics
+marks.append("Physics")
+marks.append(65)
+
+# average mark
 sum_ = 0
 count = 0
 
-for i, j in marks:
-  if isinstance(j, int):
+for i in marks:
+  if isinstance(i, int):
     sum_ += i
     count += 1
 
-print(f"{sum_/count}")
-
-
-
+print(f"Average: {sum_ / count}")
 print(marks)
