@@ -25,11 +25,9 @@ def get_name():
   while i < NUMBER_OF_STUDENTS:
     name = input(f"Name {i+1}: ")
 
-    while validate_name(name) == False:
+    if validate_name(name) == False:
       print("Invalid name")
-      break
-    
-    if validate_name(name):
+    else:
       i += 1
       nameList.append(name)
 
@@ -45,13 +43,11 @@ def get_age():
   while i < NUMBER_OF_STUDENTS:
     age = input(f"Age {i+1}: ")
 
-    while validate_age(age) == False:
-      print("Invalid age")
-      break
-    
     if validate_age(age):
       i += 1
       ageList.append(age)
+    else:
+      print("Invalid age")
 
 def validate_age(age):
   if age.isnumeric():
@@ -68,16 +64,16 @@ def get_email():
   while i < NUMBER_OF_STUDENTS:
     email = input(f"Email {i+1}: ")
 
-    while validate_email(email) == False:
-      print("Invalid email")
-      break
-
     if validate_email(email):
-      i += 1
+      i += 1x
       emailList.append(email)
+    else:
+      print("Invalid email")
+      
 
 def validate_email(email):
   regex = r"^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$"
+  
   if re.search(regex, email):
     return True
   else:
