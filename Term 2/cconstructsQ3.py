@@ -1,4 +1,9 @@
-stock = {"apple": 5, "banana": 6, "bread": 13, "chocolate": 0}
+stock = {
+  "apple": 5, 
+  "banana": 6, 
+  "bread": 13, 
+  "chocolate": 0
+}
 
 for product, quantity in stock.items():
   print(product, quantity)
