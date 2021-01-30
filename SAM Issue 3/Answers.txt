@@ -1,0 +1,55 @@
+1. (a) (i) 
+myNumbers
+
+(ii) 
+Lines 4 to 9.
+
+(iii)
+Line 6 and 8
+
+(iv) 
+total
+
+
+(b) (i)
+Comments. Descriptive variable names.
+
+(ii)
+Easier for other programmers to understand it.
+Easier to maintain the code in the future.
+Less chance of bugs.
+
+
+(c) (i)
+Incorrect grammar in the way code is written in a programming language.
+
+(ii)
+Q01cFINISHED.py
+
+...
+
+
+3 (a)
+Subprograms can be written once and be called many times.
+Can be collected in libraries and be used by other programs and files.
+
+(b) (i)
+print()
+
+(ii)
+waitTime(inSeconds)
+
+(iii)
+inTemp in toCelsius
+
+(iv)
+waitTenSeconds()
+
+(v)
+celsius
+
+(vi)
+theDate
+
+(vii)
+No value is returned in the toCelsius(inTemp) function.
