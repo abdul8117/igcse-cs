@@ -7,6 +7,6 @@ table = [[0 for column in range(numbCols)] for row in range(numbRows)]
 
 for row in range(1,10):
     for column in range(1,10):
-        table[row][column] = row*row
+        table[row][column] = row*column 
 
 print(table)
