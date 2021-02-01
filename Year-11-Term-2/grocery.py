@@ -58,11 +58,13 @@ def add_new(code, name, quantity, price):
 def main():
     record_products(2)
 
+    print(*stock, sep="\n")
+
     # ask customer for product code(s)
     product_codes = []
     num_of_products = 0
 
-    print("What have you bought?")
+    print("\n\nWhat have you bought?")
     while True:
         code = input("Product code: ")
 
@@ -81,6 +83,12 @@ def main():
     
     print(f"\nTotal cost: {total_cost}")
 
+    # decrease stock for products bought
+    for i in range(len(stock)):
+        for j in product_codes:
+            if j in stock[i][0]:
+                stock[i][2] -= 1
+
     # apply discount
     # if more than 3 products, 10% disc, if > 5, 20% disc
     if 3 > num_of_products >= 5:
@@ -96,7 +104,7 @@ def main():
     index = 0
     for i in low_stock:
         if i in stock:
-            num_to_add = int(input(f"Quantity to add to {i[1], i[0]}: "))
+            num_to_add = int(input(f"\nQuantity to add to {i[1], i[0]}: "))
             stock[index][2] += num_to_add
         index += 1
 
@@ -112,12 +120,11 @@ def main():
         p_quantity = int(input(f"Product quantity: ")) 
         p_price = float(input(f"Product price: "))
 
-        add_new(p_code, p_name, p_quantity, p_price)
+        stock.append([p_code, p_name, p_quantity, p_price])
     
     
     print("\nCurrent stock:")
-    for i in stock:
-        print(i)
+    print(*stock, sep="\n")
 
 
 main()
