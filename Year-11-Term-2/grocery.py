@@ -12,9 +12,9 @@
 # add new products to stock
 
 
-# record 10 products
 stock = []
 
+# record products
 def record_products(n):
     count = 1
 
@@ -36,15 +36,18 @@ def record_products(n):
         count += 1
 
 
-def low_stock(stock_):
+def print_low_in_stock(stock_):
     # produce a list of stock with quantity < 5
+    global low_stock
     low_stock = []
 
     for product in stock_:
         if product[2] < 5:
             low_stock.append(product)
 
-    return low_stock
+    print("Products low in stock (<5):")
+    for i in low_stock:
+        print(f"{i[1]}, {i[2]} left.")
 
 
 def add_new(code, name, quantity, price):
@@ -56,12 +59,18 @@ def main():
     record_products(2)
 
     # ask customer for product code(s)
-    num_of_products_bought = int(input("How many products do you have? "))
     product_codes = []
+    num_of_products = 0
 
-    for i in range(num_of_products_bought):
+    print("What have you bought?")
+    while True:
         code = input("Product code: ")
+
+        if code == "":
+            break
+
         product_codes.append(code)
+        num_of_products += 1
 
     # calculate total price
     total_cost = 0
@@ -70,23 +79,22 @@ def main():
             if product_codes[i] == j[0]:
                 total_cost += j[-1]
     
-    print(total_cost)
+    print(f"\nTotal cost: {total_cost}")
 
     # apply discount
     # if more than 3 products, 10% disc, if > 5, 20% disc
-    if 3 > num_of_products_bought >= 5:
+    if 3 > num_of_products >= 5:
         total_cost *= 0.8
-    elif num_of_products_bought > 5:
+    elif num_of_products > 5:
         total_cost *= 0.9
 
 
-    low_in_stock = low_stock(stock)
-    print("\nLow in stock (<5):")
-    for i in low_in_stock: print(i)
+    # print products low in stock, <5
+    print_low_in_stock(stock)
 
     # ask user to update stock quantity
     index = 0
-    for i in low_in_stock:
+    for i in low_stock:
         if i in stock:
             num_to_add = int(input(f"Quantity to add to {i[1], i[0]}: "))
             stock[index][2] += num_to_add
@@ -95,7 +103,7 @@ def main():
 
     # add new products to stock
     while True:
-        add = input("Add new product? (y/n) ")
+        add = input("\nAdd new product? (y/n) ")
         if add.lower() == "n":
             break
 
@@ -107,7 +115,7 @@ def main():
         add_new(p_code, p_name, p_quantity, p_price)
     
     
-    print("Current stock:")
+    print("\nCurrent stock:")
     for i in stock:
         print(i)
 
