@@ -3,38 +3,50 @@
 
 import string
 
+def increment_index(key, index):
+    if key > 0:
+        for i in range(key):
+            if index == 25:
+                index = 0
+                    
+            index += 1
+            
+    if key < 0:
+        for i in range(abs(key)):
+            if index == 0:
+                index = 25
+
+            index += 1
+    
+    return index
+
 def shift(string_, key):
     alphabet_l = list(string.ascii_lowercase)
     alphabet_h = list(string.ascii_uppercase)
     output = ""
 
+    if key == 0:
+        return output
+
     for i in string_:
-        
+
         if (i not in alphabet_l) and (i not in alphabet_h):
             output += i
-            continue 
-
-        if ord(i) < 97:
+            continue
+        
+        elif ord(i) < 97:
             # uppercase
-            index = alphabet_h.index(i)
-            # if i is A, index = 0
+            index = increment_index(key, alphabet_h.index(i))
 
-            if index >= 26:
-                index = index - 25
-                return alphabet_h[index]
-            
-            output += alphabet_h[index+key]
+            output += alphabet_h[index]
 
         else:
             # lowercase
-            index = alphabet_l.index(i)
+            index = increment_index(key, alphabet_l.index(i))
 
-            if index >= 26:
-                index = index - 25
-                return alphabet_l[index]
+            output += alphabet_l[index]
             
-            output += alphabet_l[index+key]
-        
+
     return output
 
 
