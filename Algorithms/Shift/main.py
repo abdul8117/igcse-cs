@@ -1,7 +1,5 @@
-# implement a shift cipher
-# ask for a word and cipher key
-
 import string
+
 
 def increment_index(key, index):
     if key > 0:
@@ -19,6 +17,7 @@ def increment_index(key, index):
             index += 1
     
     return index
+
 
 def shift(string_, key):
     alphabet_l = list(string.ascii_lowercase)
