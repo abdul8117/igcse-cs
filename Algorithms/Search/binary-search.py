@@ -1,4 +1,4 @@
-# # binary search
+# binary search
 list = [837, 1529, 1683, 2245, 3901, 3921, 4524]
 pupilNum = 1
 found = False
