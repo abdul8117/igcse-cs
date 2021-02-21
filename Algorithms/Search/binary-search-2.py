@@ -14,7 +14,7 @@ while found == False and first <= last:
     elif target > data_set[middle]:
         first = middle + 1
     
-    elif target < data_set[middle]:
+    else:
         last = middle - 1
     
 if found == False:
