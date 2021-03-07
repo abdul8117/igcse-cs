@@ -1,6 +1,8 @@
-a = [2, 8, 5, 3, 9, 4, 1]
+import random, time
+
+a = random.sample(range(10000), 10000)
 #a = ['Anya', 'Max', 'Erik', 'William', 'David', 'Shirley', 'Cheryl', 'Ben', 'Rosie', 'Henry', 'Georgina']
-print(f"\n{a}\n\nv\n")
+
 swapped = True
 
 while swapped == True:
@@ -10,4 +12,7 @@ while swapped == True:
       a[i], a[i+1] = a[i+1], a[i]
       swapped = True
 
-print(a)
+# print(a)
+print(time.perf_counter())
+
+# 10,000 numbers, 61.80s

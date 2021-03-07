@@ -1,4 +1,5 @@
 import random
+import time
 
 def merge_sort(arr):
     if len(arr) > 1:
@@ -46,12 +47,16 @@ def merge_sort(arr):
 
 
 def main():
-    array = random.sample(range(1000000), 1000000)
+    array = random.sample(range(10000), 10000)
 
     array_sorted = merge_sort(array)
 
     # print(*array_sorted, sep="\n")
-    print(array_sorted)
+    # print(array_sorted)
+
+    print(time.perf_counter())
 
 
 main()
+
+# 10,000 numbers, 0.19s
