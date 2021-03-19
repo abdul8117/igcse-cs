@@ -1,0 +1,7 @@
+Random number is 78
+0: Guess (43) is too low.
+1: Guess (76) is too low.
+2: Guess (98) is too high.
+3: Guess (79) is too high.
+4: Guess (77) is too low.
+5: Guess (78) is correct.
