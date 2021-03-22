@@ -1,12 +1,20 @@
-def AND(a, b):
-    """
-    a  -  b
-    0  -  0  - 0
-    1  -  0  - 0
-    0  -  1  - 0
-    1  -  1  - 1
-    """
+# User enters a logical expression
+# for examples, A . B + C
 
+# Create a table of all possible outputs 
+
+# Handle AND, OR, NOT
+# AND: .  ^  &
+# OR: v  +  ||
+# NOT: !  ~  ¬
+
+# .  +  !
+
+
+
+
+
+def AND(a, b):
     if  a == b:
         return 1
     elif a != b:
@@ -14,14 +22,6 @@ def AND(a, b):
 
 
 def OR(a, b):
-    """
-    a  -  b
-    0  -  0  -  0
-    1  -  0  -  1
-    0  -  1  -  1
-    1  -  1  -  1
-    """
-
     if a == 1:
         return 1
     elif b == 1:
@@ -31,12 +31,6 @@ def OR(a, b):
 
 
 def NOT(a):
-    """
-    a
-    0  -  1
-    1  -  0
-    """
-
     if a == 1:
         return 0
     elif a == 0:
@@ -44,12 +38,14 @@ def NOT(a):
 
 
 def main():
+    exp = input("Logical expression: ")
 
-    x = int(input("A: "))
-    y = int(input("B: "))
+    # create a list of the different letters
+    # 
+    # iterate through the input
+    # if char is a symbol, then evaluate the expression using the left and right chars
+    
 
-    print("\nAND:", AND(x, y))
-    print("OR:", OR(x, y)) 
 
 
 main()
