@@ -11,15 +11,12 @@
 # .  +  !
 
 
-
-
-
 def AND(a, b):
-    if  a == b:
+    if  a == 1 and b == 1:
         return 1
-    elif a != b:
+    else:
         return 0
-
+    
 
 def OR(a, b):
     if a == 1:
@@ -37,15 +34,30 @@ def NOT(a):
         return 1
 
 
-def main():
-    exp = input("Logical expression: ")
 
-    # create a list of the different letters
-    # 
-    # iterate through the input
-    # if char is a symbol, then evaluate the expression using the left and right chars
-    
+# create a list of the different letters 
+# iterate through the input
+# if char is a symbol, then evaluate the expression using the left and right chars
 
 
+A = [0, 1]
+B = [0, 1]
+# A = [1]
+# B = [0]
+# C = [0, 1]
 
-main()
+AND_SYMBOLS = ["."]
+OR_SYMBOLS = ["+"]
+NOT_SYMBOLS = ["!"]
+
+# exp = input("Logical expression: ")
+
+answer = []
+
+for i in A:
+    for j in B:
+        x = AND(i, j)
+        answer.append(x)
+
+
+print(answer)
