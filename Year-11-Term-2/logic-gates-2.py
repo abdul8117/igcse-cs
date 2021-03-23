@@ -56,7 +56,7 @@ OR_SYMBOLS = ["+"]
 NOT_SYMBOLS = ["!"]
 
 # expression = input("Logical expression: ")
-expression = "A.B"
+expression = "A+!B"
 
 answer = []
 
@@ -68,10 +68,23 @@ answer = []
 
 for i in A:
     for j in B:
+
+        # first check for nots
+        for k in range(len(expression)):
+            if expression[k] == "!":
+                if expression[k + 1] == "A":
+                    i = NOT(i)
+                else:
+                    j = NOT(j)
+
         for char in expression:
             if char == ".":
                 x = AND(i, j)
+                answer.append(x)
             elif char == "+":
                 x = OR(i, j)
+                answer.append(x)
+            
+                
 
 print(answer)
