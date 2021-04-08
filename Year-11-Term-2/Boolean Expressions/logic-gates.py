@@ -35,15 +35,6 @@ def NOT(a):
 
 
 
-# create a list of the different letters 
-# iterate through the input
-# if char is a symbol, then evaluate the expression using the left and right chars
-
-
-# def parse(exp, a, b):
-#     for char in exp:
-
-
 
 A = [0, 1]
 B = [0, 1]
@@ -73,6 +64,9 @@ for i in A:
                             k = NOT(k)
  
 
+            print("A, B and C are:", i, j, k)
+
+
             for char in expression:
 
                 if char == "." or char == "+":
@@ -83,12 +77,12 @@ for i in A:
                     elif char == "+":
                         x = OR(i, j)
                     
-                    for m in range(len(expression) - 1):
-                        if expression[m + 1] == "C" or expression[m + 2] == "C":
-                            if expression[m] == ".":
+                    for m in range(len(expression)):
+                        if expression[m] == "C":
+                            if expression[m - 1] == ".":
                                 x = AND(x, k)
                                 answer.append(x)
-                            elif expression[m] == "+":
+                            elif expression[m - 1] == "+":
                                 x = OR(x, k)
                                 answer.append(x)
 

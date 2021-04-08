@@ -40,23 +40,17 @@ def NOT(a):
 # if char is a symbol, then evaluate the expression using the left and right chars
 
 
-# def parse(exp, a, b):
-#     for char in exp:
-
-
 
 A = [0, 1]
 B = [0, 1]
-# A = [1]
-# B = [0]
-# C = [0, 1]
+
 
 # AND_SYMBOLS = ["."]
 # OR_SYMBOLS = ["+"]
 # NOT_SYMBOLS = ["!"]
 
 # expression = input("Logical expression: ")
-expression = "A+!B"
+expression = "A.B"
 
 answer = []
 
@@ -70,6 +64,8 @@ for i in A:
                     i = NOT(i)
                 else:
                     j = NOT(j)
+
+        print("A and B are:", i, j)
 
         for char in expression:
             if char == ".":
