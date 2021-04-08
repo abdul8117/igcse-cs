@@ -51,20 +51,14 @@ B = [0, 1]
 # B = [0]
 # C = [0, 1]
 
-AND_SYMBOLS = ["."]
-OR_SYMBOLS = ["+"]
-NOT_SYMBOLS = ["!"]
+# AND_SYMBOLS = ["."]
+# OR_SYMBOLS = ["+"]
+# NOT_SYMBOLS = ["!"]
 
 # expression = input("Logical expression: ")
 expression = "A+!B"
 
 answer = []
-
-
-# for i in A:
-#     for j in B:
-#         x = AND(i, j)
-#         answer.append(x)
 
 for i in A:
     for j in B:
@@ -84,7 +78,7 @@ for i in A:
             elif char == "+":
                 x = OR(i, j)
                 answer.append(x)
-            
+
                 
 
 print(answer)

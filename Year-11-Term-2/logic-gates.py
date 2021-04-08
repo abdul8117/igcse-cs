@@ -47,31 +47,71 @@ def NOT(a):
 
 A = [0, 1]
 B = [0, 1]
-# A = [1]
-# B = [0]
-# C = [0, 1]
+C = [0, 1]
 
-AND_SYMBOLS = ["."]
-OR_SYMBOLS = ["+"]
-NOT_SYMBOLS = ["!"]
+# AND_SYMBOLS = ["."]
+# OR_SYMBOLS = ["+"]
+# NOT_SYMBOLS = ["!"]
 
-# expression = input("Logical expression: ")
-expression = "A.B"
 
+expression = input("Logical expression:\n")
 answer = []
-
-
-# for i in A:
-#     for j in B:
-#         x = AND(i, j)
-#         answer.append(x)
 
 for i in A:
     for j in B:
-        for char in expression:
-            if char == ".":
-                x = AND(i, j)
-            elif char == "+":
-                x = OR(i, j)
+        for k in C:
+
+            # first check for nots
+            if "!" in expression:
+                for l in range(len(expression) - 1):
+                    if l == "!":
+                        if expression[l + 1] == "A":
+                            i = NOT(i)
+                        elif expression[l + 1] == "B":
+                            j = NOT(j)
+                        elif expression[l + 1] == "C":
+                            k = NOT(k)
+ 
+
+            for char in expression:
+
+                if char == "." or char == "+":
+
+                    if char == ".":
+                        x = AND(i, j)
+                    
+                    elif char == "+":
+                        x = OR(i, j)
+                    
+                    for m in range(len(expression) - 1):
+                        if expression[m + 1] == "C" or expression[m + 2] == "C":
+                            if expression[m] == ".":
+                                x = AND(x, k)
+                                answer.append(x)
+                            elif expression[m] == "+":
+                                x = OR(x, k)
+                                answer.append(x)
+
+
+
+                # if char == ".":
+                #     x = AND(i, j)
+
+                #     for m in range(len(expression) - 1):
+                #         if expression[m] == ".":
+                #             if expression[m + 1] == "C" or expression[m + 2] == "C":
+                #                 x = AND(x, k)
+                #                 answer.append(x)
+
+                # elif char == "+":
+                #     x = OR(i, j)
+
+                #     for n in range(len(expression) - 1):
+                #         if expression[n] == "+":
+                #             if expression[n + 1] == "C" or expression[n + 2] == "C":
+                #                 x = OR(x, k)
+                #                 answer.append(x)
+
+                
 
 print(answer)
