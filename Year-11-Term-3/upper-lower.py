@@ -1,4 +1,4 @@
-text = "gayle is best than kohli how can you compare lion with rat"
+text = input()
 output = ""
 x = 0
 
@@ -12,6 +12,5 @@ for char in text:
 
     if char == " ":
         x -= 1
-
 
 print(output)
